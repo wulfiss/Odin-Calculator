@@ -7,14 +7,16 @@ const resta = (numOne, numTwo) => {
 };
 
 const equal = (previousValue, currentValue, operant) => {
+    let result = 0;
     switch (operant) {
-        case 'suma':
-            console.log(suma(previousValue, currentValue));
+            case 'suma':
+            result = suma(previousValue, currentValue);
             break;
         case 'resta':
-            console.log(resta(previousValue, currentValue));
+            result = resta(previousValue, currentValue);
             break;
     }
+    return result;
 };
 
 console.log(suma(1, 2));
@@ -56,6 +58,7 @@ $subtraction.addEventListener('click', e => {
 })
 
 $equal.addEventListener('click', e => {
-    equal(previousValue, currentValue, operant);
+    currentValue = equal(previousValue, currentValue, operant);
+    displayNum.textContent = currentValue;
 })
 
