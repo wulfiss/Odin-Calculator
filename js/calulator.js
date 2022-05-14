@@ -19,10 +19,6 @@ const equal = (previousValue, currentValue, operant) => {
     return result;
 };
 
-console.log(suma(1, 2));
-console.log(resta(1, 2));
-
-
 const $one = document.querySelector('#oneB');
 const $two = document.querySelector('#twoB');
 const $add = document.querySelector('#sumaB');
