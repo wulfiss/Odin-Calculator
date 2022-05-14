@@ -6,6 +6,17 @@ const resta = (numOne, numTwo) => {
     return numOne - numTwo;
 };
 
+const equal = (previousValue, currentValue, operant) => {
+    switch (operant) {
+        case 'suma':
+            console.log(suma(previousValue, currentValue));
+            break;
+        case 'resta':
+            console.log(resta(previousValue, currentValue));
+            break;
+    }
+};
+
 console.log(suma(1, 2));
 console.log(resta(1, 2));
 
@@ -13,6 +24,7 @@ console.log(resta(1, 2));
 const $one = document.querySelector('#oneB');
 const $two = document.querySelector('#twoB');
 const $add = document.querySelector('#sumaB');
+const $subtraction = document.querySelector('#restaB');
 const $equal = document.querySelector('#equalB');
 const displayNum = document.querySelector('#displayNum');
 let currentValue = '';
@@ -36,12 +48,14 @@ $add.addEventListener('click', e => {
     operant = "suma";
 })
 
+$subtraction.addEventListener('click', e => {
+    previousValue = currentValue;
+    currentValue = '';
+    displayNum.textContent ='';
+    operant = "resta";
+})
+
 $equal.addEventListener('click', e => {
     equal(previousValue, currentValue, operant);
 })
 
-const equal = (previousValue, currentValue, operant) => {
-    if (operant == 'suma'){
-        return console.log(suma(previousValue, currentValue));
-    }
-}
