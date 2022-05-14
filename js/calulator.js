@@ -14,9 +14,12 @@ const divi = (numOne, numTwo) => {
     if(+numOne == 0 || +numTwo == 0){
         return "You can't divide 0!";
     }
-
     return +numOne / +numTwo;
-}
+};
+
+const mod = (numOne, numTwo) => {
+    return (+numOne % +numTwo + +numTwo) % +numTwo;
+};
 
 const equal = (previousValue, currentValue, operant) => {
     let result = 0;
@@ -30,6 +33,8 @@ const equal = (previousValue, currentValue, operant) => {
         case 'divi':
             result = divi(previousValue, currentValue);
             break;
+        case 'mod':
+            result = mod(previousValue, currentValue);
     }
     return result;
 };
@@ -37,10 +42,13 @@ const equal = (previousValue, currentValue, operant) => {
 const $one = document.querySelector('#oneB');
 const $two = document.querySelector('#twoB');
 const $zero = document.querySelector('#zeroB');
+
 const $add = document.querySelector('#sumaB');
 const $divi = document.querySelector('#diviB');
 const $subtraction = document.querySelector('#restaB');
+const $mod = document.querySelector('#restB');
 const $equal = document.querySelector('#equalB');
+
 const displayNum = document.querySelector('#displayNum');
 let currentValue = '';
 let previousValue = '';
@@ -80,6 +88,13 @@ $divi.addEventListener('click', e => {
     currentValue = '';
     displayNum.textContent ='';
     operant = "divi";
+});
+
+$mod.addEventListener('click', e => {
+    previousValue = currentValue;
+    currentValue = '';
+    displayNum.textContent ='';
+    operant = "mod";
 });
 
 $equal.addEventListener('click', e => {
