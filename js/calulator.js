@@ -20,7 +20,7 @@ const $buttons = document.querySelector('.buttons');
 const displayNum = document.querySelector('#displayNum');
 let currentValue = '';
 let previousValue = '';
-let operant = '';
+let operator = '';
 
 let numButtonMap = {
     b_one: function(e){
@@ -67,36 +67,43 @@ let numButtonMap = {
         previousValue = currentValue;
         currentValue = '';
         displayNum.textContent ='';
-        operant = "addition";
+        operator = "addition";
     },
     b_subtract: function(e){
         previousValue = currentValue;
         currentValue = '';
         displayNum.textContent ='';
-        operant = "subtraction";
+        operator = "subtraction";
     },
     b_multiply: function(e){
         previousValue = currentValue;
         currentValue = '';
         displayNum.textContent ='';
-        operant = "multiply";
+        operator = "multiply";
     },
     b_divide: function(e){
         previousValue = currentValue;
         currentValue = '';
         displayNum.textContent ='';
-        operant = "division";
+        operator = "division";
     },
     b_remainder: function(e){
         previousValue = currentValue;
         currentValue = '';
         displayNum.textContent ='';
-        operant = "remainder";
+        operator = "remainder";
     },
     b_equal: function(e){
-        currentValue = operationsMap[operant](previousValue, currentValue);
+        currentValue = operationsMap[operator](previousValue, currentValue);
         displayNum.textContent = Number(Number(currentValue).toFixed(3));
+    },
+    b_clear: function(e){
+        currentValue = '';
+        previousValue = '';
+        operator = '';
+        displayNum.textContent =''
     }
+    
 }
 
 $buttons.addEventListener('click', (e) => {
