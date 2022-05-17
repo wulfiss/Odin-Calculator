@@ -56,16 +56,6 @@ let currentValue = '';
 let previousValue = '';
 let operant = '';
 
-$one.addEventListener('click', e => {
-    displayNum.textContent += '1';
-    currentValue += '1';
-});
-
-$two.addEventListener('click', e => {
-    displayNum.textContent += '2';
-    currentValue += '2';
-});
-
 $zero.addEventListener('click', e => {
     displayNum.textContent += '0';
     currentValue += '0';
@@ -103,4 +93,25 @@ $equal.addEventListener('click', e => {
     currentValue = equal(previousValue, currentValue, operant);
     displayNum.textContent = currentValue;
 });
+
+
+let buttonMap = {
+    b_One: function(e){
+        displayNum.textContent += '1';
+        currentValue += '1';
+    },
+    b_Two: function(e){
+        displayNum.textContent += '2';
+        currentValue += '2';
+    }
+}
+
+$buttons.addEventListener('click', (e) => {
+    let target = e.target;
+    let handler;
+    if(target.nodeName == "BUTTON" && (handler = target.getAttribute('data-handler'))){
+        buttonMap[handler](e)
+    }
+});
+
 
