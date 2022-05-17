@@ -39,6 +39,8 @@ const equal = (previousValue, currentValue, operant) => {
     return result;
 };
 
+const $buttons = document.querySelector('.buttons');
+
 const $one = document.querySelector('#oneB');
 const $two = document.querySelector('#twoB');
 const $zero = document.querySelector('#zeroB');
