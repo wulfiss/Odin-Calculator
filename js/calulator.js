@@ -35,58 +35,20 @@ const equal = (previousValue, currentValue, operant) => {
             break;
         case 'mod':
             result = mod(previousValue, currentValue);
+            break;
+        case 'multi':
+            result = multi(previousValue, currentValue);
+            break;
     }
     return result;
 };
 
 const $buttons = document.querySelector('.buttons');
-
-const $add = document.querySelector('#sumaB');
-const $divi = document.querySelector('#diviB');
-const $subtraction = document.querySelector('#restaB');
-const $mod = document.querySelector('#restB');
-const $equal = document.querySelector('#equalB');
-
 const displayNum = document.querySelector('#displayNum');
 let currentValue = '';
 let previousValue = '';
 let operant = '';
 
-/*
-$add.addEventListener('click', e => {
-    previousValue = currentValue;
-    currentValue = '';
-    displayNum.textContent ='';
-    operant = "suma";
-});
-
-$subtraction.addEventListener('click', e => {
-    previousValue = currentValue;
-    currentValue = '';
-    displayNum.textContent ='';
-    operant = "resta";
-});
-
-$divi.addEventListener('click', e => {
-    previousValue = currentValue;
-    currentValue = '';
-    displayNum.textContent ='';
-    operant = "divi";
-});
-
-$mod.addEventListener('click', e => {
-    previousValue = currentValue;
-    currentValue = '';
-    displayNum.textContent ='';
-    operant = "mod";
-});
-
-$equal.addEventListener('click', e => {
-    currentValue = equal(previousValue, currentValue, operant);
-    displayNum.textContent = currentValue;
-});
-
-*/
 let numButtonMap = {
     b_one: function(e){
         displayNum.textContent += '1';
@@ -127,6 +89,40 @@ let numButtonMap = {
     b_zero: function(e){
         displayNum.textContent += '0';
         currentValue += '0';
+    },
+    b_add: function(e){
+        previousValue = currentValue;
+        currentValue = '';
+        displayNum.textContent ='';
+        operant = "suma";
+    },
+    b_subtract: function(e){
+        previousValue = currentValue;
+        currentValue = '';
+        displayNum.textContent ='';
+        operant = "resta";
+    },
+    b_multiply: function(e){
+        previousValue = currentValue;
+        currentValue = '';
+        displayNum.textContent ='';
+        operant = "multi";
+    },
+    b_divide: function(e){
+        previousValue = currentValue;
+        currentValue = '';
+        displayNum.textContent ='';
+        operant = "divi";
+    },
+    b_remainder: function(e){
+        previousValue = currentValue;
+        currentValue = '';
+        displayNum.textContent ='';
+        operant = "mod";
+    },
+    b_equal: function(e){
+        currentValue = equal(previousValue, currentValue, operant);
+        displayNum.textContent = currentValue;
     }
 }
 
