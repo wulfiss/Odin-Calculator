@@ -1,47 +1,20 @@
-const suma = (numOne, numTwo) => {
-    return +numOne + +numTwo;
-};
-
-const resta = (numOne, numTwo) => {
-    return +numOne - +numTwo;
-};
-
-const multi = (numOne, numTwo) => {
-    return +numOne * +numTwo;
-};
-
-const divi = (numOne, numTwo) => {
-    if(+numOne == 0 || +numTwo == 0){
-        return "You can't divide 0!";
-    }
-    return +numOne / +numTwo;
-};
-
-const mod = (numOne, numTwo) => {
-    return (+numOne % +numTwo + +numTwo) % +numTwo;
-};
-
-const equal = (previousValue, currentValue, operant) => {
-    let result = 0;
-    switch (operant) {
-            case 'suma':
-            result = suma(previousValue, currentValue);
-            break;
-        case 'resta':
-            result = resta(previousValue, currentValue);
-            break;
-        case 'divi':
-            result = divi(previousValue, currentValue);
-            break;
-        case 'mod':
-            result = mod(previousValue, currentValue);
-            break;
-        case 'multi':
-            result = multi(previousValue, currentValue);
-            break;
-    }
-    return result;
-};
+const operationsMap ={
+    addition: function(previousValue, currentValue){
+        return +previousValue + +currentValue;
+    },
+    subtraction: function(previousValue, currentValue){
+        return +previousValue - +currentValue;
+    },
+    multiply: function(previousValue, currentValue){
+        return +previousValue * +currentValue;
+    },
+    division: function(previousValue, currentValue){
+        return (+previousValue == 0 || +currentValue == 0) ? "You cannot divide by 0" : +previousValue / +currentValue;
+    },
+    remainder: function(previousValue, currentValue){
+        return (+previousValue % +currentValue + +currentValue) % +currentValue;
+    },
+}
 
 const $buttons = document.querySelector('.buttons');
 const displayNum = document.querySelector('#displayNum');
@@ -94,34 +67,34 @@ let numButtonMap = {
         previousValue = currentValue;
         currentValue = '';
         displayNum.textContent ='';
-        operant = "suma";
+        operant = "addition";
     },
     b_subtract: function(e){
         previousValue = currentValue;
         currentValue = '';
         displayNum.textContent ='';
-        operant = "resta";
+        operant = "subtraction";
     },
     b_multiply: function(e){
         previousValue = currentValue;
         currentValue = '';
         displayNum.textContent ='';
-        operant = "multi";
+        operant = "multiply";
     },
     b_divide: function(e){
         previousValue = currentValue;
         currentValue = '';
         displayNum.textContent ='';
-        operant = "divi";
+        operant = "division";
     },
     b_remainder: function(e){
         previousValue = currentValue;
         currentValue = '';
         displayNum.textContent ='';
-        operant = "mod";
+        operant = "remainder";
     },
     b_equal: function(e){
-        currentValue = equal(previousValue, currentValue, operant);
+        currentValue = operationsMap[operant](previousValue, currentValue);
         displayNum.textContent = currentValue;
     }
 }
