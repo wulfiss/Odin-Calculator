@@ -95,7 +95,7 @@ let numButtonMap = {
     },
     b_equal: function(e){
         currentValue = operationsMap[operant](previousValue, currentValue);
-        displayNum.textContent = currentValue;
+        displayNum.textContent = Number(Number(currentValue).toFixed(3));
     }
 }
 
