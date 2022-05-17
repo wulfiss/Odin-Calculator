@@ -41,10 +41,6 @@ const equal = (previousValue, currentValue, operant) => {
 
 const $buttons = document.querySelector('.buttons');
 
-const $one = document.querySelector('#oneB');
-const $two = document.querySelector('#twoB');
-const $zero = document.querySelector('#zeroB');
-
 const $add = document.querySelector('#sumaB');
 const $divi = document.querySelector('#diviB');
 const $subtraction = document.querySelector('#restaB');
@@ -56,11 +52,7 @@ let currentValue = '';
 let previousValue = '';
 let operant = '';
 
-$zero.addEventListener('click', e => {
-    displayNum.textContent += '0';
-    currentValue += '0';
-})
-
+/*
 $add.addEventListener('click', e => {
     previousValue = currentValue;
     currentValue = '';
@@ -94,15 +86,47 @@ $equal.addEventListener('click', e => {
     displayNum.textContent = currentValue;
 });
 
-
-let buttonMap = {
-    b_One: function(e){
+*/
+let numButtonMap = {
+    b_one: function(e){
         displayNum.textContent += '1';
         currentValue += '1';
     },
-    b_Two: function(e){
+    b_two: function(e){
         displayNum.textContent += '2';
         currentValue += '2';
+    },
+    b_three: function(e){
+        displayNum.textContent += '3';
+        currentValue += '3';
+    },
+    b_four: function(e){
+        displayNum.textContent += '4';
+        currentValue += '4';
+    },
+    b_five: function(e){
+        displayNum.textContent += '5';
+        currentValue += '5';
+    },
+    b_six: function(e){
+        displayNum.textContent += '6';
+        currentValue += '6';
+    },
+    b_seven: function(e){
+        displayNum.textContent += '7';
+        currentValue += '7';
+    },
+    b_eight: function(e){
+        displayNum.textContent += '8';
+        currentValue += '8';
+    },
+    b_nine: function(e){
+        displayNum.textContent += '9';
+        currentValue += '9';
+    },
+    b_zero: function(e){
+        displayNum.textContent += '0';
+        currentValue += '0';
     }
 }
 
@@ -110,7 +134,7 @@ $buttons.addEventListener('click', (e) => {
     let target = e.target;
     let handler;
     if(target.nodeName == "BUTTON" && (handler = target.getAttribute('data-handler'))){
-        buttonMap[handler](e)
+        numButtonMap[handler](e)
     }
 });
 
