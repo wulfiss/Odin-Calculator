@@ -18,79 +18,80 @@ const operationsMap ={
 
 const $buttons = document.querySelector('.buttons');
 const displayNum = document.querySelector('#displayNum');
+const displayCurrent = document.querySelector('#displayCurrent');
 let currentValue = '';
 let previousValue = '';
 let operator = '';
 
 let numButtonMap = {
     b_one: function(e){
-        displayNum.textContent += '1';
+        displayCurrent.textContent += '1';
         currentValue += '1';
     },
     b_two: function(e){
-        displayNum.textContent += '2';
+        displayCurrent.textContent += '2';
         currentValue += '2';
     },
     b_three: function(e){
-        displayNum.textContent += '3';
+        displayCurrent.textContent += '3';
         currentValue += '3';
     },
     b_four: function(e){
-        displayNum.textContent += '4';
+        displayCurrent.textContent += '4';
         currentValue += '4';
     },
     b_five: function(e){
-        displayNum.textContent += '5';
+        displayCurrent.textContent += '5';
         currentValue += '5';
     },
     b_six: function(e){
-        displayNum.textContent += '6';
+        displayCurrent.textContent += '6';
         currentValue += '6';
     },
     b_seven: function(e){
-        displayNum.textContent += '7';
+        displayCurrent.textContent += '7';
         currentValue += '7';
     },
     b_eight: function(e){
-        displayNum.textContent += '8';
+        displayCurrent.textContent += '8';
         currentValue += '8';
     },
     b_nine: function(e){
-        displayNum.textContent += '9';
+        displayCurrent.textContent += '9';
         currentValue += '9';
     },
     b_zero: function(e){
-        displayNum.textContent += '0';
+        displayCurrent.textContent += '0';
         currentValue += '0';
     },
     b_add: function(e){
         previousValue = currentValue;
         currentValue = '';
-        displayNum.textContent ='';
+        displayCurrent.textContent += ' + ';
         operator = "addition";
     },
     b_subtract: function(e){
         previousValue = currentValue;
         currentValue = '';
-        displayNum.textContent ='';
+        displayCurrent.textContent += ' - ';
         operator = "subtraction";
     },
     b_multiply: function(e){
         previousValue = currentValue;
         currentValue = '';
-        displayNum.textContent ='';
+        displayCurrent.textContent += ' * ';
         operator = "multiply";
     },
     b_divide: function(e){
         previousValue = currentValue;
         currentValue = '';
-        displayNum.textContent ='';
+        displayCurrent.textContent += ' / ';
         operator = "division";
     },
     b_remainder: function(e){
         previousValue = currentValue;
         currentValue = '';
-        displayNum.textContent ='';
+        displayCurrent.textContent += ' % ';
         operator = "remainder";
     },
     b_equal: function(e){
@@ -101,7 +102,8 @@ let numButtonMap = {
         currentValue = '';
         previousValue = '';
         operator = '';
-        displayNum.textContent =''
+        displayNum.textContent ='';
+        displayCurrent.textContent = '';
     }
     
 }
