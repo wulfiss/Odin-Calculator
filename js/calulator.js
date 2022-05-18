@@ -13,7 +13,14 @@ const operationsMap ={
     },
     remainder: function(previousValue, currentValue){
         return (+previousValue % +currentValue + +currentValue) % +currentValue;
-    },
+    }
+}
+
+function operationVerification(){
+    if(currentValue && previousValue){
+        currentValue = operationsMap[operator](previousValue, currentValue);
+        displayNum.textContent = Number(Number(currentValue).toFixed(3));
+    }
 }
 
 const $buttons = document.querySelector('.buttons');
@@ -22,6 +29,9 @@ const displayCurrent = document.querySelector('#displayCurrent');
 let currentValue = '';
 let previousValue = '';
 let operator = '';
+let result = '';
+
+
 
 let numButtonMap = {
     b_one: function(e){
@@ -65,30 +75,35 @@ let numButtonMap = {
         currentValue += '0';
     },
     b_add: function(e){
+        operationVerification();
         previousValue = currentValue;
         currentValue = '';
         displayCurrent.textContent += ' + ';
         operator = "addition";
     },
     b_subtract: function(e){
+        operationVerification();
         previousValue = currentValue;
         currentValue = '';
         displayCurrent.textContent += ' - ';
         operator = "subtraction";
     },
     b_multiply: function(e){
+        operationVerification();
         previousValue = currentValue;
         currentValue = '';
         displayCurrent.textContent += ' * ';
         operator = "multiply";
     },
     b_divide: function(e){
+        operationVerification();
         previousValue = currentValue;
         currentValue = '';
         displayCurrent.textContent += ' / ';
         operator = "division";
     },
     b_remainder: function(e){
+        operationVerification();
         previousValue = currentValue;
         currentValue = '';
         displayCurrent.textContent += ' % ';
@@ -97,6 +112,7 @@ let numButtonMap = {
     b_equal: function(e){
         currentValue = operationsMap[operator](previousValue, currentValue);
         displayNum.textContent = Number(Number(currentValue).toFixed(3));
+        previousValue = '';
     },
     b_clear: function(e){
         currentValue = '';
