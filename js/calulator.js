@@ -19,9 +19,22 @@ const operationsMap ={
 function operationVerification(){
     if(currentValue && previousValue){
         currentValue = operationsMap[operator](previousValue, currentValue);
-        displayNum.textContent = Number(Number(currentValue).toFixed(3));
+        displayCurrent.textContent = Number(Number(currentValue).toFixed(3));
+    }else if(!currentValue && !previousValue){
+        //currentValue = '';
+        displayCurrent.textContent = '';
+        operator = '';
+    }
+    showNewValue = true;
+}
+
+function clearDisplayCurrent(){
+    if(showNewValue == true){
+        displayCurrent.textContent = '';
+        showNewValue = false;
     }
 }
+
 
 const $buttons = document.querySelector('.buttons');
 const displayNum = document.querySelector('#displayNum');
@@ -29,7 +42,7 @@ const displayCurrent = document.querySelector('#displayCurrent');
 let currentValue = '';
 let previousValue = '';
 let operator = '';
-let result = '';
+let showNewValue = false;
 
 
 
@@ -42,42 +55,52 @@ let numButtonMap = {
         }
     },
     b_one: function(e){
+        clearDisplayCurrent();
         displayCurrent.textContent += '1';
         currentValue += '1';
     },
     b_two: function(e){
+        clearDisplayCurrent();
         displayCurrent.textContent += '2';
         currentValue += '2';
     },
     b_three: function(e){
+        clearDisplayCurrent();
         displayCurrent.textContent += '3';
         currentValue += '3';
     },
     b_four: function(e){
+        clearDisplayCurrent();
         displayCurrent.textContent += '4';
         currentValue += '4';
     },
     b_five: function(e){
+        clearDisplayCurrent();
         displayCurrent.textContent += '5';
         currentValue += '5';
     },
     b_six: function(e){
+        clearDisplayCurrent();
         displayCurrent.textContent += '6';
         currentValue += '6';
     },
     b_seven: function(e){
+        clearDisplayCurrent();
         displayCurrent.textContent += '7';
         currentValue += '7';
     },
     b_eight: function(e){
+        clearDisplayCurrent();
         displayCurrent.textContent += '8';
         currentValue += '8';
     },
     b_nine: function(e){
+        clearDisplayCurrent();
         displayCurrent.textContent += '9';
         currentValue += '9';
     },
     b_zero: function(e){
+        clearDisplayCurrent();
         displayCurrent.textContent += '0';
         currentValue += '0';
     },
@@ -85,49 +108,53 @@ let numButtonMap = {
         operationVerification();
         previousValue = currentValue;
         currentValue = '';
-        displayCurrent.textContent += ' + ';
         operator = "addition";
+        
     },
     b_subtract: function(e){
         operationVerification();
         previousValue = currentValue;
         currentValue = '';
-        displayCurrent.textContent += ' - ';
         operator = "subtraction";
+        
     },
     b_multiply: function(e){
         operationVerification();
         previousValue = currentValue;
         currentValue = '';
-        displayCurrent.textContent += ' * ';
         operator = "multiply";
+        
     },
     b_divide: function(e){
         operationVerification();
         previousValue = currentValue;
         currentValue = '';
-        displayCurrent.textContent += ' / ';
         operator = "division";
+        
     },
     b_remainder: function(e){
         operationVerification();
         previousValue = currentValue;
         currentValue = '';
-        displayCurrent.textContent += ' % ';
         operator = "remainder";
+        
     },
     b_equal: function(e){
         if(!previousValue){
-            displayNum.textContent = currentValue;
+            displayCurrent.textContent = currentValue;
         }
         operationVerification();
         previousValue = '';
+        
     },
     b_clear: function(e){
         currentValue = '';
         previousValue = '';
         operator = '';
-        displayNum.textContent ='';
+        displayCurrent.textContent = '';
+    },
+    b_backspace: function(e){
+        currentValue = '';
         displayCurrent.textContent = '';
     }
     
