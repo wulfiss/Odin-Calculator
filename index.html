@@ -8,13 +8,28 @@
     </head>
 
     <body>
-        <button class="numPad one" id="oneB" value="1">1</button>
-        <button class="numPad two" id="twoB" value="2">2</button>
-        <button class="numPad suma" id="sumaB" value="suma">+</button>
-        <button class="numPad resta" id="restaB" value="resta">-</button>
-        <button class="numPad equal" id="equalB" value="equal">=</button>
-        <div class="display num" id="displayNum">0</div>
-        <div class="display result" id="displayResult">0</div>
+        <section class="buttons">
+            <button type="button" class="key" data-handler="b_one">1</button>
+            <button type="button" class="key" data-handler="b_two">2</button>
+            <button type="button" class="key" data-handler="b_three">3</button>
+            <button type="button" class="key" data-handler="b_four">4</button>
+            <button type="button" class="key" data-handler="b_five">5</button>
+            <button type="button" class="key" data-handler="b_six">6</button>
+            <button type="button" class="key" data-handler="b_seven">7</button>
+            <button type="button" class="key" data-handler="b_eight">8</button>
+            <button type="button" class="key" data-handler="b_nine">9</button>
+            <button type="button" class="key" data-handler="b_zero">0</button>
+
+            <button type="button" class="key" data-handler="b_add">+</button>
+            <button type="button" class="key" data-handler="b_subtract">-</button>
+            <button type="button" class="key" data-handler="b_multiply">x</button>
+            <button type="button" class="key" data-handler="b_divide">/</button>
+            <button type="button" class="key" data-handler="b_remainder">%</button>
+            <button type="button" class="key" data-handler="b_equal">=</button>
+            <button type="button" class="key" data-handler="b_clear">Clear</button>
+        </section>
+        <div class="display" id="displayCurrent"></div>
+        <div class="display num" id="displayNum"></div>
     </body>
     
 </html>
