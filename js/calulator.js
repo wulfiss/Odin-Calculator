@@ -34,6 +34,10 @@ let result = '';
 
 
 let numButtonMap = {
+    b_dot: function(e){
+        displayCurrent.textContent += '.';
+        currentValue += '.';
+    },
     b_one: function(e){
         displayCurrent.textContent += '1';
         currentValue += '1';
