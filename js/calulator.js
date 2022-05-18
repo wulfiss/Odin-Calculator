@@ -34,7 +34,12 @@ function clearDisplayCurrent(){
         showNewValue = false;
     }
 }
-
+function checkCurrentValue(){
+    if(currentValue != ''){
+        previousValue = currentValue;
+        currentValue = '';
+    };
+}
 
 const $buttons = document.querySelector('.buttons');
 const displayNum = document.querySelector('#displayNum');
@@ -106,36 +111,30 @@ let numButtonMap = {
     },
     b_add: function(e){
         operationVerification();
-        previousValue = currentValue;
-        currentValue = '';
+        checkCurrentValue()
         operator = "addition";
-        
     },
     b_subtract: function(e){
         operationVerification();
-        previousValue = currentValue;
-        currentValue = '';
+        checkCurrentValue()
         operator = "subtraction";
         
     },
     b_multiply: function(e){
         operationVerification();
-        previousValue = currentValue;
-        currentValue = '';
+        checkCurrentValue()
         operator = "multiply";
         
     },
     b_divide: function(e){
         operationVerification();
-        previousValue = currentValue;
-        currentValue = '';
+        checkCurrentValue()
         operator = "division";
         
     },
     b_remainder: function(e){
         operationVerification();
-        previousValue = currentValue;
-        currentValue = '';
+        checkCurrentValue()
         operator = "remainder";
         
     },
