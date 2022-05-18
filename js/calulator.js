@@ -110,10 +110,10 @@ let numButtonMap = {
         operator = "remainder";
     },
     b_equal: function(e){
-        if(previousValue){
-            operationVerification();
+        if(!previousValue){
+            displayNum.textContent = currentValue;
         }
-        displayNum.textContent = currentValue;
+        operationVerification();
         previousValue = '';
     },
     b_clear: function(e){
