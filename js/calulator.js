@@ -35,8 +35,11 @@ let result = '';
 
 let numButtonMap = {
     b_dot: function(e){
+        let matchDot = currentValue.match(/\./);
+        if(!matchDot){
         displayCurrent.textContent += '.';
         currentValue += '.';
+        }
     },
     b_one: function(e){
         displayCurrent.textContent += '1';
