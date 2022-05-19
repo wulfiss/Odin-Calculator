@@ -1,0 +1,25 @@
+html{
+    height: 100%;
+    max-width: 1000px;
+    min-width: fit-content;
+    border: 1px solid red;
+}
+
+.display{
+    width: auto;
+    height: 140px;
+    margin: 30px;
+    border: 2px solid red;
+}
+
+p{
+    font-size: 150px;
+    margin: 0;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    width: auto;
+    font-size: 140px;
+}
