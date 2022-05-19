@@ -52,81 +52,81 @@ let showNewValue = false;
 
 
 let numButtonMap = {
-    b_dot: function(e){
+    Period: function(e){
         let matchDot = currentValue.match(/\./);
         if(!matchDot){
         displayCurrent.textContent += '.';
         currentValue += '.';
         }
     },
-    b_one: function(e){
+    Digit1: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent += '1';
         currentValue += '1';
     },
-    b_two: function(e){
+    Digit2: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent += '2';
         currentValue += '2';
     },
-    b_three: function(e){
+    Digit3: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent += '3';
         currentValue += '3';
     },
-    b_four: function(e){
+    Digit4: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent += '4';
         currentValue += '4';
     },
-    b_five: function(e){
+    Digit5: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent += '5';
         currentValue += '5';
     },
-    b_six: function(e){
+    Digit6: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent += '6';
         currentValue += '6';
     },
-    b_seven: function(e){
+    Digit7: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent += '7';
         currentValue += '7';
     },
-    b_eight: function(e){
+    Digit8: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent += '8';
         currentValue += '8';
     },
-    b_nine: function(e){
+    Digit9: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent += '9';
         currentValue += '9';
     },
-    b_zero: function(e){
+    Digit0: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent += '0';
         currentValue += '0';
     },
-    b_add: function(e){
+    NumpadAdd: function(e){
         operationVerification();
         checkCurrentValue()
         operator = "addition";
     },
-    b_subtract: function(e){
+    NumpadSubtract: function(e){
         operationVerification();
         checkCurrentValue()
         operator = "subtraction";
         
     },
-    b_multiply: function(e){
+    NumpadMultiply: function(e){
         operationVerification();
         checkCurrentValue()
         operator = "multiply";
         
     },
-    b_divide: function(e){
+    Slash: function(e){
         operationVerification();
         checkCurrentValue()
         operator = "division";
@@ -138,7 +138,7 @@ let numButtonMap = {
         operator = "remainder";
         
     },
-    b_equal: function(e){
+    Equal: function(e){
         if(!previousValue){
             displayCurrent.textContent = currentValue;
         }
@@ -152,7 +152,7 @@ let numButtonMap = {
         operator = '';
         displayCurrent.textContent = '';
     },
-    b_backspace: function(e){
+    Backspace: function(e){
         currentValue = '';
         displayCurrent.textContent = '';
     }
@@ -167,4 +167,7 @@ $buttons.addEventListener('click', (e) => {
     }
 });
 
+window.addEventListener('keydown', (e) =>{
+    numButtonMap[e.code](e);
+});
 
