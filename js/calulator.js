@@ -42,8 +42,13 @@ function checkCurrentValue(){
 }
 
 function negative(currentValue){
-    return "-" + currentValue;
-}
+    let matchMinus = currentValue.match(/\-/);
+    if(!matchMinus){
+        return "-" + currentValue;
+    }else{
+        return currentValue.replace(/\-/,'');
+    }
+}   
 
 const $buttons = document.querySelector('.buttons');
 const displayNum = document.querySelector('#displayNum');
@@ -136,13 +141,9 @@ let numButtonMap = {
         operator = "division";
         
     },
-    b_remainder: function(e){
-        displayCurrent.textContent = negative(currentValue);
-        /*
-        operationVerification();
-        checkCurrentValue()
-        operator = "remainder";
-        */
+    b_negative: function(e){
+        currentValue = negative(currentValue);
+        displayCurrent.textContent = currentValue;
     },
     Equal: function(e){
         if(!previousValue){
