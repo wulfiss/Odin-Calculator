@@ -21,7 +21,7 @@ function operationVerification(){
         currentValue = operationsMap[operator](previousValue, currentValue);
         displayCurrent.textContent = Number(Number(currentValue).toFixed(3));
     }else if(!currentValue && !previousValue){
-        //currentValue = '';
+        currentValue = '';
         displayCurrent.textContent = '';
         operator = '';
     }
