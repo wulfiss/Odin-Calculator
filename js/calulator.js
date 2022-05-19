@@ -13,8 +13,8 @@ const operationsMap ={
     },
     remainder: function(previousValue, currentValue){
         return (+previousValue % +currentValue + +currentValue) % +currentValue;
-    }
-}
+    },    
+ }
 
 function operationVerification(){
     if(currentValue && previousValue){
@@ -39,6 +39,10 @@ function checkCurrentValue(){
         previousValue = currentValue;
         currentValue = '';
     };
+}
+
+function negative(currentValue){
+    return "-" + currentValue;
 }
 
 const $buttons = document.querySelector('.buttons');
@@ -133,10 +137,12 @@ let numButtonMap = {
         
     },
     b_remainder: function(e){
+        displayCurrent.textContent = negative(currentValue);
+        /*
         operationVerification();
         checkCurrentValue()
         operator = "remainder";
-        
+        */
     },
     Equal: function(e){
         if(!previousValue){
