@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="">
     <head>
         <meta charset="utf-8">
         <script src="./js/calulator.js" defer></script>
@@ -8,6 +8,9 @@
     </head>
 
     <body>
+
+        <div class="display" id="displayCurrent"></div>
+
         <section class="buttons">
             <button type="button" class="button" data-handler="Digit1">1</button>
             <button type="button" class="button" data-handler="Digit2">2</button>
@@ -27,12 +30,10 @@
             <button type="button" class="button" data-handler="b_remainder">%</button>
             <button type="button" class="button" data-handler="Period">.</button>
             <button type="button" class="button" data-handler="Equal">=</button>
-            <button type="button" class="button" data-handler="Backspace">C</button>
-            <button type="button" class="button" data-handler="b_clear">Clear</button>
+            <button type="button" class="button" data-handler="Backspace">CE</button>
+            <button type="button" class="button" data-handler="b_clear">AC</button>
         </section>
-
-        <div class="display" id="displayCurrent"></div>
-        <div class="display num" id="displayNum"></div>
+   
     </body>
     
 </html>
