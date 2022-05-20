@@ -9,7 +9,7 @@ const operationsMap ={
         return +previousValue * +currentValue;
     },
     division: function(previousValue, currentValue){
-        return previousValue == 0 || +currentValue == 0 ? "You cannot divide by 0" : +previousValue / +currentValue;
+        return previousValue == 0 || +currentValue == 0 ? "You cannot divide by 0" : Number(Number(+previousValue / +currentValue).toFixed(3));
     },
     remainder: function(previousValue, currentValue){
         return (+previousValue % +currentValue + +currentValue) % +currentValue;
@@ -19,7 +19,7 @@ const operationsMap ={
 function operationVerification(){
     if(currentValue && previousValue){
         currentValue = operationsMap[operator](previousValue, currentValue);
-        displayCurrent.textContent = Number(Number(currentValue).toFixed(3));
+        displayCurrent.textContent = currentValue;
     }else if(!currentValue && !previousValue){
         currentValue = '';
         displayCurrent.textContent = '';
