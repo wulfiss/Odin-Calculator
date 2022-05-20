@@ -9,7 +9,7 @@ const operationsMap ={
         return +previousValue * +currentValue;
     },
     division: function(previousValue, currentValue){
-        return (+previousValue == 0 || +currentValue == 0) ? "You cannot divide by 0" : +previousValue / +currentValue;
+        return previousValue == 0 || +currentValue == 0 ? "You cannot divide by 0" : +previousValue / +currentValue;
     },
     remainder: function(previousValue, currentValue){
         return (+previousValue % +currentValue + +currentValue) % +currentValue;
@@ -120,24 +120,24 @@ let numButtonMap = {
     },
     NumpadAdd: function(e){
         operationVerification();
-        checkCurrentValue()
+        checkCurrentValue();
         operator = "addition";
     },
     NumpadSubtract: function(e){
         operationVerification();
-        checkCurrentValue()
+        checkCurrentValue();
         operator = "subtraction";
         
     },
     NumpadMultiply: function(e){
         operationVerification();
-        checkCurrentValue()
+        checkCurrentValue();
         operator = "multiply";
         
     },
     Slash: function(e){
         operationVerification();
-        checkCurrentValue()
+        checkCurrentValue();
         operator = "division";
         
     },
