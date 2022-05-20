@@ -43,6 +43,7 @@ function checkCurrentValue(){
 
 function negative(currentValue){
    if(!currentValue){
+        showNewValue = false;
         return "-";
    }else{
         return currentValue * -1;
