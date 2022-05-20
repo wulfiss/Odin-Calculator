@@ -42,12 +42,11 @@ function checkCurrentValue(){
 }
 
 function negative(currentValue){
-    let matchMinus = currentValue.match(/\-/);
-    if(!matchMinus){
-        return "-" + currentValue;
-    }else{
-        return currentValue.replace(/\-/,'');
-    }
+   if(!currentValue){
+        return "-";
+   }else{
+        return currentValue * -1;
+   }
 }   
 
 const $buttons = document.querySelector('.buttons');
