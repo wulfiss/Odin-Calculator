@@ -19,7 +19,7 @@ const operationsMap ={
 function operationVerification(){
     if(currentValue && previousValue){
         currentValue = operationsMap[operator](previousValue, currentValue);
-        displayCurrent.textContent = currentValue;
+        displayCurrent.textContent = scientificNotation(currentValue);
     }else if(!currentValue && !previousValue){
         currentValue = '';
         displayCurrent.textContent = '';
@@ -28,6 +28,13 @@ function operationVerification(){
     showNewValue = true;
 }
 
+function scientificNotation(currentValue){
+    if(currentValue > 9999999999){
+        return Number.parseFloat(currentValue).toExponential(2);
+    }else{
+        return currentValue;
+    }
+}
 function clearDisplayCurrent(){
     if(showNewValue == true){
         displayCurrent.textContent = '';
@@ -133,7 +140,6 @@ let numButtonMap = {
         operationVerification();
         checkCurrentValue();
         operator = "subtraction";
-        
     },
     NumpadMultiply: function(e){
         clearDisplayCurrent();
