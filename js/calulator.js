@@ -53,6 +53,8 @@ function negative(currentValue){
 const $buttons = document.querySelector('.buttons');
 const displayNum = document.querySelector('#displayNum');
 const displayCurrent = document.querySelector('#displayCurrent');
+const displayPrevious = document.querySelector('#displyPrevious');
+
 let currentValue = '';
 let previousValue = '';
 let operator = '';
@@ -119,23 +121,31 @@ let numButtonMap = {
         currentValue += '0';
     },
     NumpadAdd: function(e){
+        clearDisplayCurrent();
         operationVerification();
         checkCurrentValue();
+        displayCurrent.textContent = '+';
         operator = "addition";
     },
     NumpadSubtract: function(e){
+        clearDisplayCurrent();
+        displayCurrent.textContent = '-';
         operationVerification();
         checkCurrentValue();
         operator = "subtraction";
         
     },
     NumpadMultiply: function(e){
+        clearDisplayCurrent();
+        displayCurrent.textContent = 'X';
         operationVerification();
         checkCurrentValue();
         operator = "multiply";
         
     },
     Slash: function(e){
+        clearDisplayCurrent();
+        displayCurrent.textContent = '/';
         operationVerification();
         checkCurrentValue();
         operator = "division";
