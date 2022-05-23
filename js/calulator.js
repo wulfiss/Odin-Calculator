@@ -60,7 +60,7 @@ function negative(currentValue){
 const $buttons = document.querySelector('.buttons');
 const displayNum = document.querySelector('#displayNum');
 const displayCurrent = document.querySelector('#displayCurrent');
-const displayPrevious = document.querySelector('#displyPrevious');
+const displayPrevious = document.querySelector('#displayPrevious');
 
 let currentValue = '';
 let previousValue = '';
@@ -129,30 +129,30 @@ let numButtonMap = {
         currentValue += '0';
     },
     NumpadAdd: function(e){
+        displayPrevious.textContent += displayCurrent.textContent + '+';
         clearDisplayCurrent();
         operationVerification();
         checkCurrentValue();
-        displayCurrent.textContent = '+';
         operator = "addition";
     },
     NumpadSubtract: function(e){
+        displayPrevious.textContent += displayCurrent.textContent + '-';
         clearDisplayCurrent();
-        displayCurrent.textContent = '-';
         operationVerification();
         checkCurrentValue();
         operator = "subtraction";
     },
     NumpadMultiply: function(e){
+        displayPrevious.textContent += displayCurrent.textContent + 'x';
         clearDisplayCurrent();
-        displayCurrent.textContent = 'X';
         operationVerification();
         checkCurrentValue();
         operator = "multiply";
         
     },
     Slash: function(e){
+        displayPrevious.textContent += displayCurrent.textContent + '/';
         clearDisplayCurrent();
-        displayCurrent.textContent = '/';
         operationVerification();
         checkCurrentValue();
         operator = "division";
@@ -168,13 +168,14 @@ let numButtonMap = {
         }
         operationVerification();
         previousValue = '';
-        
+        displayPrevious.textContent = '';
     },
     b_clear: function(e){
         currentValue = '';
         previousValue = '';
         operator = '';
         displayCurrent.textContent = '';
+        displayPrevious.textContent = '';
     },
     Backspace: function(e){
         currentValue = '';
