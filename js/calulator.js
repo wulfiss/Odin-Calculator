@@ -55,7 +55,15 @@ function negative(currentValue){
    }else{
         return currentValue * -1;
    }
-}   
+} 
+
+function operationChar(content){
+    if(content.length > 26){
+        displayPrevious.textContent = '...';
+    }else{
+        return content;
+    }
+}
 
 const $buttons = document.querySelector('.buttons');
 const displayNum = document.querySelector('#displayNum');
@@ -129,21 +137,24 @@ let numButtonMap = {
         currentValue += '0';
     },
     NumpadAdd: function(e){
-        displayPrevious.textContent += displayCurrent.textContent + '+';
+        operationChar(displayPrevious.textContent);
+        displayPrevious.textContent +=  displayCurrent.textContent + ' + ';
         clearDisplayCurrent();
         operationVerification();
         checkCurrentValue();
         operator = "addition";
     },
     NumpadSubtract: function(e){
-        displayPrevious.textContent += displayCurrent.textContent + '-';
+        operationChar(displayPrevious.textContent);
+        displayPrevious.textContent += displayCurrent.textContent + ' - ';
         clearDisplayCurrent();
         operationVerification();
         checkCurrentValue();
         operator = "subtraction";
     },
     NumpadMultiply: function(e){
-        displayPrevious.textContent += displayCurrent.textContent + 'x';
+        operationChar(displayPrevious.textContent);
+        displayPrevious.textContent += displayCurrent.textContent + ' x ';
         clearDisplayCurrent();
         operationVerification();
         checkCurrentValue();
@@ -151,7 +162,8 @@ let numButtonMap = {
         
     },
     Slash: function(e){
-        displayPrevious.textContent += displayCurrent.textContent + '/';
+        operationChar(displayPrevious.textContent);
+        displayPrevious.textContent += displayCurrent.textContent + ' / ';
         clearDisplayCurrent();
         operationVerification();
         checkCurrentValue();
