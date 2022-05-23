@@ -29,7 +29,7 @@ function operationVerification(){
 }
 
 function scientificNotation(currentValue){
-    if(currentValue > 9999999999){
+    if(currentValue > 999999999){
         return Number.parseFloat(currentValue).toExponential(2);
     }else{
         return currentValue;
@@ -79,52 +79,53 @@ let numButtonMap = {
     },
     Digit1: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent += '1';
+        displayCurrent.textContent = scientificNotation(currentValue) + '1';
         currentValue += '1';
+        
     },
     Digit2: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent += '2';
+        displayCurrent.textContent = scientificNotation(currentValue) + '2';
         currentValue += '2';
     },
     Digit3: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent += '3';
+        displayCurrent.textContent = scientificNotation(currentValue) + '3';
         currentValue += '3';
     },
     Digit4: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent += '4';
+        displayCurrent.textContent = scientificNotation(currentValue) + '4';
         currentValue += '4';
     },
     Digit5: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent += '5';
+        displayCurrent.textContent = scientificNotation(currentValue) + '5';
         currentValue += '5';
     },
     Digit6: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent += '6';
+        displayCurrent.textContent = scientificNotation(currentValue) + '6';
         currentValue += '6';
     },
     Digit7: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent += '7';
+        displayCurrent.textContent = scientificNotation(currentValue) + '7';
         currentValue += '7';
     },
     Digit8: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent += '8';
+        displayCurrent.textContent = scientificNotation(currentValue) + '8';
         currentValue += '8';
     },
     Digit9: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent += '9';
+        displayCurrent.textContent = scientificNotation(currentValue) + '9';
         currentValue += '9';
     },
     Digit0: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent += '0';
+        displayCurrent.textContent = scientificNotation(currentValue) + '0';
         currentValue += '0';
     },
     NumpadAdd: function(e){
