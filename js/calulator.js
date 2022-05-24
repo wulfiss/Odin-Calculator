@@ -32,7 +32,7 @@ function scientificNotation(currentValue){
     if(currentValue > 999999999){
         return Number.parseFloat(currentValue).toExponential(2);
     }else{
-        return Number(Number(currentValue).toFixed(3));
+        return currentValue;
     }
 }
 function clearDisplayCurrent(){
