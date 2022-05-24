@@ -38,6 +38,7 @@ function scientificNotation(currentValue){
 function clearDisplayCurrent(){
     if(showNewValue == true){
         displayCurrent.textContent = '';
+        currentValue = '';
         showNewValue = false;
     }
 }
