@@ -140,7 +140,6 @@ let numButtonMap = {
     NumpadAdd: function(e){
         operationChar(displayPrevious.textContent);
         displayPrevious.textContent +=  displayCurrent.textContent + ' + ';
-        clearDisplayCurrent();
         operationVerification();
         checkCurrentValue();
         operator = "addition";
@@ -148,7 +147,6 @@ let numButtonMap = {
     NumpadSubtract: function(e){
         operationChar(displayPrevious.textContent);
         displayPrevious.textContent += displayCurrent.textContent + ' - ';
-        clearDisplayCurrent();
         operationVerification();
         checkCurrentValue();
         operator = "subtraction";
@@ -156,7 +154,6 @@ let numButtonMap = {
     NumpadMultiply: function(e){
         operationChar(displayPrevious.textContent);
         displayPrevious.textContent += displayCurrent.textContent + ' x ';
-        clearDisplayCurrent();
         operationVerification();
         checkCurrentValue();
         operator = "multiply";
@@ -165,7 +162,6 @@ let numButtonMap = {
     Slash: function(e){
         operationChar(displayPrevious.textContent);
         displayPrevious.textContent += displayCurrent.textContent + ' / ';
-        clearDisplayCurrent();
         operationVerification();
         checkCurrentValue();
         operator = "division";
