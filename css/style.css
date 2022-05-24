@@ -1,7 +1,7 @@
 html{
     height: 100%;
     width: 100%;
-    
+    display: flex;
 }
 
 body{
@@ -24,7 +24,7 @@ p{
 
 .buttons{
     display: flex;
-    align-content: stretch;
+    align-content: space-around;
     justify-content: center;
     flex-wrap: wrap;
     width: auto;
@@ -44,4 +44,36 @@ p{
 
 #displayPrevious{
     font-size: 25px;
+}
+
+@media screen and (max-width: 800px) {
+    html{
+        width: 355px;
+    }
+
+    body{
+        height: 650px;
+    }
+
+    .display{
+        width: 310px;
+        margin: 20px 10px;
+    }
+
+    .button{
+        width: 65px;
+        font-size: 30px;
+    }
+
+    #b_zero{
+        width: 140px;
+    }
+
+    p{
+        font-size: 50px;
+    }
+
+    #displayPrevious{
+        font-size: 20px;
+    }
 }
