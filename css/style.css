@@ -11,6 +11,9 @@ body{
 }
 
 .display{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
     width: auto;
     height: 160px;
     margin: 30px 20px;
@@ -19,7 +22,12 @@ body{
 
 p{
     font-size: 70px;
-    margin: 0;
+    margin: 5px;
+    text-align: end;
+}
+
+#displayCurrent{
+    width: 100%;
 }
 
 .buttons{
@@ -60,6 +68,11 @@ p{
         margin: 20px 10px;
     }
 
+    #displayCurrent{
+        width: 305px;
+        height: 100px;
+    }
+
     .button{
         width: 65px;
         font-size: 30px;
@@ -70,7 +83,7 @@ p{
     }
 
     p{
-        font-size: 50px;
+        font-size: 60px;
     }
 
     #displayPrevious{
