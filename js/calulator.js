@@ -81,7 +81,7 @@ let showNewValue = false;
 let numButtonMap = {
     Period: function(e){
         let matchDot = currentValue.match(/\./);
-        if(!matchDot){
+        if(matchDot == null && currentValue != ''){
         displayCurrent.textContent += '.';
         currentValue += '.';
         }
@@ -112,7 +112,7 @@ let numButtonMap = {
         displayCurrent.textContent = scientificNotation(currentValue) + '5';
         currentValue += '5';
     },
-    Digit6: function(e){
+    Digit6: function(e){ 
         clearDisplayCurrent();
         displayCurrent.textContent = scientificNotation(currentValue) + '6';
         currentValue += '6';
