@@ -68,11 +68,27 @@ function operationChar(content){
 
 function nowShowingMoreSign(sign){
     let x = displayPrevious.textContent.length;
+    let str = '';
     if(displayCurrent.textContent != ''){
-        if(displayPrevious.textContent[x-2] != sign || showNewSign == true){
+        if(displayPrevious.textContent[x-2] == sign && showNewSign == false){
+
+        }else{
             displayPrevious.textContent += displayCurrent.textContent + " " + sign + " ";
             showNewSign = false;
         }
+    }
+
+    }
+
+
+function replaceSign(sign){
+    let x = displayPrevious.textContent.length;
+    let str = '';
+    if(displayPrevious.textContent[x-2] != sign && currentValue == ''){
+       str = displayPrevious.textContent.split(' ');
+       str[x-1] = sign;
+       displayPrevious.textContent = '';
+       displayPrevious.textContent = str.join(' '); 
     }
 }
 
@@ -158,6 +174,7 @@ let numButtonMap = {
     },
     NumpadAdd: function(e){
         nowShowingMoreSign('+');
+        replaceSign('+');
         operationChar(displayPrevious.textContent);
         operationVerification();
         checkCurrentValue();
