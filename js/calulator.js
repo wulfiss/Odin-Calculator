@@ -66,6 +66,16 @@ function operationChar(content){
     }
 }
 
+function nowShowingMoreSign(sign){
+    let x = displayPrevious.textContent.length;
+    if(displayCurrent.textContent != ''){
+        if(displayPrevious.textContent[x-2] != sign || showNewSign == true){
+            displayPrevious.textContent += displayCurrent.textContent + " " + sign + " ";
+            showNewSign = false;
+        }
+    }
+}
+
 const $buttons = document.querySelector('.buttons');
 const displayNum = document.querySelector('#displayNum');
 const displayCurrent = document.querySelector('#displayCurrent');
@@ -75,7 +85,7 @@ let currentValue = '';
 let previousValue = '';
 let operator = '';
 let showNewValue = false;
-
+let showNewSign = false;
 
 
 let numButtonMap = {
@@ -90,78 +100,87 @@ let numButtonMap = {
         clearDisplayCurrent();
         displayCurrent.textContent = scientificNotation(currentValue) + '1';
         currentValue += '1';
-        
+        showNewSign = true;
     },
     Digit2: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent = scientificNotation(currentValue) + '2';
         currentValue += '2';
+        showNewSign = true;
     },
     Digit3: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent = scientificNotation(currentValue) + '3';
         currentValue += '3';
+        showNewSign = true;
     },
     Digit4: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent = scientificNotation(currentValue) + '4';
         currentValue += '4';
+        showNewSign = true;
     },
     Digit5: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent = scientificNotation(currentValue) + '5';
         currentValue += '5';
+        showNewSign = true;
     },
     Digit6: function(e){ 
         clearDisplayCurrent();
         displayCurrent.textContent = scientificNotation(currentValue) + '6';
         currentValue += '6';
+        showNewSign = true;
     },
     Digit7: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent = scientificNotation(currentValue) + '7';
         currentValue += '7';
+        showNewSign = true;
     },
     Digit8: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent = scientificNotation(currentValue) + '8';
         currentValue += '8';
+        showNewSign = true;
     },
     Digit9: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent = scientificNotation(currentValue) + '9';
         currentValue += '9';
+        showNewSign = true;
     },
     Digit0: function(e){
         clearDisplayCurrent();
         displayCurrent.textContent = scientificNotation(currentValue) + '0';
         currentValue += '0';
+        showNewSign = true;
     },
     NumpadAdd: function(e){
+        nowShowingMoreSign('+');
         operationChar(displayPrevious.textContent);
-        displayPrevious.textContent +=  displayCurrent.textContent + ' + ';
         operationVerification();
         checkCurrentValue();
         operator = "addition";
     },
     NumpadSubtract: function(e){
+        nowShowingMoreSign('-');
         operationChar(displayPrevious.textContent);
-        displayPrevious.textContent += displayCurrent.textContent + ' - ';
         operationVerification();
         checkCurrentValue();
         operator = "subtraction";
     },
     NumpadMultiply: function(e){
+        nowShowingMoreSign('x');
         operationChar(displayPrevious.textContent);
-        displayPrevious.textContent += displayCurrent.textContent + ' x ';
         operationVerification();
         checkCurrentValue();
         operator = "multiply";
         
     },
     Slash: function(e){
+        nowShowingMoreSign('/');
         operationChar(displayPrevious.textContent);
-        displayPrevious.textContent += displayCurrent.textContent + ' / ';
         operationVerification();
         checkCurrentValue();
         operator = "division";
