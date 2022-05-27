@@ -68,27 +68,23 @@ function operationChar(content){
 
 function nowShowingMoreSign(sign){
     let x = displayPrevious.textContent.length;
-    let str = '';
     if(displayCurrent.textContent != ''){
-        if(displayPrevious.textContent[x-2] == sign && showNewSign == false){
-
-        }else{
+        if(showNewSign == true){
             displayPrevious.textContent += displayCurrent.textContent + " " + sign + " ";
             showNewSign = false;
         }
     }
-
-    }
+}
 
 
 function replaceSign(sign){
     let x = displayPrevious.textContent.length;
     let str = '';
-    if(displayPrevious.textContent[x-2] != sign && currentValue == ''){
-       str = displayPrevious.textContent.split(' ');
-       str[x-1] = sign;
+    if(showNewSign == false){
+       str = displayPrevious.textContent.split('');
+       str[x-2] = sign;
        displayPrevious.textContent = '';
-       displayPrevious.textContent = str.join(' '); 
+       displayPrevious.textContent = str.join(''); 
     }
 }
 
@@ -182,6 +178,7 @@ let numButtonMap = {
     },
     NumpadSubtract: function(e){
         nowShowingMoreSign('-');
+        replaceSign('-');
         operationChar(displayPrevious.textContent);
         operationVerification();
         checkCurrentValue();
@@ -189,6 +186,7 @@ let numButtonMap = {
     },
     NumpadMultiply: function(e){
         nowShowingMoreSign('x');
+        replaceSign('/');
         operationChar(displayPrevious.textContent);
         operationVerification();
         checkCurrentValue();
@@ -197,6 +195,7 @@ let numButtonMap = {
     },
     Slash: function(e){
         nowShowingMoreSign('/');
+        replaceSign('/');
         operationChar(displayPrevious.textContent);
         operationVerification();
         checkCurrentValue();
