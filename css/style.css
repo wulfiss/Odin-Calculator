@@ -4,6 +4,8 @@ html{
     display: flex;
     background-color: aliceblue;
     font-family: 'Fira Mono', monospace;
+    justify-content: center;
+    align-items: center;
 }
 
 body{
@@ -85,12 +87,13 @@ p{
     font-size: 25px;
 }
 
-@media screen and (max-width: 800px) {
-    html{
-        justify-content: center;
-        align-items: center;
-    }
+footer{
+    text-align: center;
+    justify-self: end;
+    font-size: small;
+}
 
+@media screen and (max-width: 800px) {
     body{
         height: 650px;
         width: 355px;
