@@ -9,7 +9,7 @@ const operationsMap ={
         return +previousValue * +currentValue;
     },
     division: function(previousValue, currentValue){
-        return previousValue == 0 || +currentValue == 0 ? "ERROR" : Number(Number(+previousValue / +currentValue).toFixed(3));
+        return +previousValue == 0 || +currentValue == 0 ? "ERROR" : (+previousValue / +currentValue);
     },
     remainder: function(previousValue, currentValue){
         return (+previousValue % +currentValue + +currentValue) % +currentValue;
@@ -29,12 +29,24 @@ function operationVerification(){
 }
 
 function scientificNotation(currentValue){
-    if(currentValue > 999999999){
-        return Number.parseFloat(currentValue).toExponential(2);
+    if(currentValue.length > 4){
+        return (+currentValue).toExponential(2);
     }else{
-        return currentValue;
+        return (+currentValue);
     }
 }
+
+function displayNumorNot(num, currentValue1){
+    
+    let x = currentValue.length;
+
+    if(x < 4){
+        return currentValue;
+    }else{
+        return scientificNotation(currentValue1); 
+    }
+}
+
 function clearDisplayCurrent(){
     if(showNewValue == true){
         displayCurrent.textContent = '';
@@ -110,62 +122,62 @@ let numButtonMap = {
     },
     Digit1: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent = scientificNotation(currentValue) + '1';
         currentValue += '1';
+        displayCurrent.textContent = displayNumorNot('1', currentValue);
         showNewSign = true;
     },
     Digit2: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent = scientificNotation(currentValue) + '2';
         currentValue += '2';
+        displayCurrent.textContent = displayNumorNot('2', currentValue);
         showNewSign = true;
     },
     Digit3: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent = scientificNotation(currentValue) + '3';
         currentValue += '3';
+        displayCurrent.textContent = displayNumorNot('3', currentValue);
         showNewSign = true;
     },
     Digit4: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent = scientificNotation(currentValue) + '4';
         currentValue += '4';
+        displayCurrent.textContent = displayNumorNot('4', currentValue);
         showNewSign = true;
     },
     Digit5: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent = scientificNotation(currentValue) + '5';
         currentValue += '5';
+        displayCurrent.textContent = displayNumorNot('5', currentValue);
         showNewSign = true;
     },
     Digit6: function(e){ 
         clearDisplayCurrent();
-        displayCurrent.textContent = scientificNotation(currentValue) + '6';
         currentValue += '6';
+        displayCurrent.textContent = displayNumorNot('6', currentValue);
         showNewSign = true;
     },
     Digit7: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent = scientificNotation(currentValue) + '7';
         currentValue += '7';
+        displayCurrent.textContent = displayNumorNot('7', currentValue);
         showNewSign = true;
     },
     Digit8: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent = scientificNotation(currentValue) + '8';
         currentValue += '8';
+        displayCurrent.textContent = displayNumorNot('8', currentValue);
         showNewSign = true;
     },
     Digit9: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent = scientificNotation(currentValue) + '9';
         currentValue += '9';
+        displayCurrent.textContent = displayNumorNot('9', currentValue);
         showNewSign = true;
     },
     Digit0: function(e){
         clearDisplayCurrent();
-        displayCurrent.textContent = scientificNotation(currentValue) + '0';
         currentValue += '0';
+        displayCurrent.textContent = displayNumorNot('0', currentValue);
         showNewSign = true;
     },
     NumpadAdd: function(e){
