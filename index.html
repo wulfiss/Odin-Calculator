@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale= 1"/>
         <script src="./js/calulator.js" defer></script>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./css/style.css">
         <title>Calculator</title>
     </head>
@@ -15,30 +16,30 @@
         </div>
 
         <section class="buttons">
-            <button type="button" class="button" data-handler="b_clear">AC</button>
-            <button type="button" class="button" data-handler="Backspace">C</button>
-            <button type="button" class="button" data-handler="b_negative">+/-</button>
-            <button type="button" class="button" data-handler="Slash">/</button> <br>
+            <button type="button" class="button nonNum" data-handler="b_clear">AC</button>
+            <button type="button" class="button nonNum" data-handler="Backspace">C</button>
+            <button type="button" class="button nonNum" data-handler="b_negative">+/-</button>
+            <button type="button" class="button nonNum" data-handler="Slash">/</button> <br>
 
             <button type="button" class="button" data-handler="Digit7">7</button>
             <button type="button" class="button" data-handler="Digit8">8</button>
             <button type="button" class="button" data-handler="Digit9">9</button>
-            <button type="button" class="button" data-handler="NumpadMultiply">x</button><br>
+            <button type="button" class="button nonNum" data-handler="NumpadMultiply">x</button><br>
 
             <button type="button" class="button" data-handler="Digit4">4</button>
             <button type="button" class="button" data-handler="Digit5">5</button>
             <button type="button" class="button" data-handler="Digit6">6</button>
-            <button type="button" class="button" data-handler="NumpadSubtract">-</button><br>
+            <button type="button" class="button nonNum" data-handler="NumpadSubtract">-</button><br>
 
             <button type="button" class="button" data-handler="Digit1">1</button>
             <button type="button" class="button" data-handler="Digit2">2</button>
             <button type="button" class="button" data-handler="Digit3">3</button>
-            <button type="button" class="button" data-handler="NumpadAdd">+</button><br>
+            <button type="button" class="button nonNum" data-handler="NumpadAdd">+</button><br>
             
 
             <button type="button" id="b_zero" class="button" data-handler="Digit0">0</button>
-            <button type="button" class="button" data-handler="Period">.</button>
-            <button type="button" class="button" data-handler="Equal">=</button>          
+            <button type="button" class="button nonNum" data-handler="Period">.</button>
+            <button type="button" class="button nonNum" data-handler="Equal">=</button>          
             
         </section>
    
