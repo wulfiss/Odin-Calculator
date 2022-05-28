@@ -10,7 +10,7 @@ body{
     width: 500px;
     height: 650px;
     border-radius: 10px;
-    background: rgba(0, 0, 0, 0.486);
+    background: rgba(0, 0, 0, 0.548);
 }
 
 .display{
@@ -62,13 +62,20 @@ p{
 }
 
 .button.nonNum{
-    background-color: darkgoldenrod;
+    background-color: rgb(224, 164, 12);
 }
 
 .button.nonNum:hover{
-    background-color:rgb(126, 78, 6);
+    background-color:rgb(160, 104, 20);
 }
 
+#b_equal{
+    background-color: rgb(207, 40, 40);
+}
+
+#b_equal:hover{
+    background-color: brown;
+}
 
 #b_zero{
     width: 230px;
