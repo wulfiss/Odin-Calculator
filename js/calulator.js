@@ -29,7 +29,9 @@ function operationVerification(){
 }
 
 function scientificNotation(currentValue){
-    if(currentValue.length > 4){
+    let j = currentValue.toString();
+
+    if(j.length > 7){
         return (+currentValue).toExponential(2);
     }else{
         return (+currentValue);
@@ -40,7 +42,7 @@ function displayNumorNot(num, currentValue1){
     
     let x = currentValue.length;
 
-    if(x < 4){
+    if(x < 7){
         return currentValue;
     }else{
         return scientificNotation(currentValue1); 
