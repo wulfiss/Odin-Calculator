@@ -186,7 +186,7 @@ let numButtonMap = {
     },
     NumpadMultiply: function(e){
         nowShowingMoreSign('x');
-        replaceSign('/');
+        replaceSign('x');
         operationChar(displayPrevious.textContent);
         operationVerification();
         checkCurrentValue();
