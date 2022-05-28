@@ -56,11 +56,13 @@ p{
 
 @media screen and (max-width: 800px) {
     html{
-        width: 355px;
+        justify-content: center;
+        align-items: center;
     }
 
     body{
         height: 650px;
+        width: 355px;
     }
 
     .display{
