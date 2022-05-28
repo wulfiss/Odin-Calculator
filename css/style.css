@@ -67,12 +67,17 @@ p{
 
     .display{
         width: 310px;
-        margin: 20px 10px;
+       
     }
 
     #displayCurrent{
         width: 305px;
         height: 100px;
+    }
+
+    #displayPrevious{
+        width: 305px;
+        height: 40px;
     }
 
     .button{
@@ -85,7 +90,7 @@ p{
     }
 
     p{
-        font-size: 60px;
+        font-size: 70px;
     }
 
     #displayPrevious{
